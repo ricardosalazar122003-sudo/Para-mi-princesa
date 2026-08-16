@@ -1,64 +1,291 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Para Mi Amor ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para mi Princesa ❤️</title>
 
 <style>
-body{
-    background: linear-gradient(135deg,#ff9ecf,#ffd6e7);
-    font-family: Arial, sans-serif;
-    text-align:center;
-    padding-top:100px;
-    color:white;
+
+* {
+    box-sizing: border-box;
 }
 
-.carta{
-    background: rgba(255,255,255,0.15);
-    padding:40px;
-    width:70%;
-    margin:auto;
-    border-radius:20px;
-    backdrop-filter: blur(10px);
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #ffb6d9, #ff6fae, #ffc4df);
 }
 
-h1{
-    font-size:45px;
+/* Brillo del fondo */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 50%;
+    filter: blur(80px);
 }
 
-p{
-    font-size:24px;
+/* Contenedor */
+
+.contenedor {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    z-index: 10;
 }
+
+/* Sobre */
+
+.sobre {
+    position: relative;
+    width: 360px;
+    height: 250px;
+    margin: auto;
+    background: #f7b2cc;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* Parte frontal del sobre */
+
+.sobre::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    border-left: 180px solid transparent;
+    border-right: 180px solid transparent;
+    border-bottom: 130px solid #ec8eb2;
+
+    z-index: 5;
+}
+
+/* Solapa */
+
+.solapa {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 180px solid transparent;
+    border-right: 180px solid transparent;
+    border-top: 140px solid #f49abb;
+
+    transform-origin: top;
+    z-index: 6;
+
+    animation: abrir 2s ease forwards;
+}
+
+/* Carta */
+
+.carta {
+    position: absolute;
+    width: 320px;
+    min-height: 230px;
+
+    left: 20px;
+    bottom: 10px;
+
+    background: #fffafc;
+    border-radius: 8px;
+
+    padding: 35px 25px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    z-index: 3;
+
+    animation: salirCarta 3s ease forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+
+.carta h1 {
+    color: #e94f8a;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.carta p {
+    color: #6d3b50;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+/* Corazones */
+
+.corazon {
+    position: fixed;
+    bottom: -50px;
+    font-size: 25px;
+    animation: flotar linear infinite;
+    opacity: 0.8;
+}
+
+/* Animaciones */
+
+@keyframes abrir {
+
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(180deg);
+        z-index: 1;
+    }
+}
+
+@keyframes salirCarta {
+
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-170px);
+        opacity: 1;
+    }
+}
+
+@keyframes flotar {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Adaptación para celular */
+
+@media (max-width: 500px) {
+
+    .sobre {
+        width: 300px;
+        height: 210px;
+    }
+
+    .sobre::before {
+        border-left-width: 150px;
+        border-right-width: 150px;
+        border-bottom-width: 110px;
+    }
+
+    .solapa {
+        border-left-width: 150px;
+        border-right-width: 150px;
+        border-top-width: 120px;
+    }
+
+    .carta {
+        width: 270px;
+        left: 15px;
+    }
+
+    .carta h1 {
+        font-size: 27px;
+    }
+
+    .carta p {
+        font-size: 16px;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="carta">
-<h1>❤️ Para la niña de mis ojos ❤️</h1>
+<div class="contenedor">
 
-<p>
-Te amo más de lo que las palabras pueden expresar.
-</p>
+    <div class="sobre">
 
-<p>
-Eres la princesa de mi corazón y cada día a tu lado es un regalo.
-</p>
+        <div class="carta">
 
-<p>
-Juntos podemos lograrlo todo.
-</p>
+            <h1>Para mi Princesa ❤️</h1>
 
-<p>
-Y deseo que sigamos juntos y felices por siempre. 💖
-</p>
+            <p>
+                Te dije que siempre encontraría una nueva forma
+                de sorprenderte y mostrarte el cariño que siento por ti.
+            </p>
 
-<p>
-Con amor,<br>
-Ricardo
-</p>
+            <p>
+                Te adoro con mi vida y te quiero con mi alma. ❤️
+            </p>
+
+        </div>
+
+        <div class="solapa"></div>
+
+    </div>
 
 </div>
-<div class="corazon">❤️</div>
+
+
+<script>
+
+/* Crear corazones automáticamente */
+
+const corazones = ["❤️", "💕", "💖", "💗", "💓", "💘"];
+
+function crearCorazon() {
+
+    const corazon = document.createElement("div");
+
+    corazon.classList.add("corazon");
+
+    corazon.innerHTML =
+        corazones[Math.floor(Math.random() * corazones.length)];
+
+    corazon.style.left =
+        Math.random() * 100 + "vw";
+
+    corazon.style.animationDuration =
+        (5 + Math.random() * 6) + "s";
+
+    corazon.style.fontSize =
+        (15 + Math.random() * 25) + "px";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 11000);
+}
+
+setInterval(crearCorazon, 400);
+
+</script>
+
 </body>
 </html>
